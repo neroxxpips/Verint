@@ -42,9 +42,3 @@ def ping_server(): # to test code outside of aws lambda remove both arguments(ev
         'body': json.dumps('Ping Google Server Successfully!')
     }
     
-
-
-        
-
-
-ping_server()
