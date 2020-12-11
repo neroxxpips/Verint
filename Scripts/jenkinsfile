@@ -1,4 +1,5 @@
 /* groovylint-disable-next-line CompileStatic */
+/* This is a simple jenkins pipeline job that prints "Hello Verint!"*/
 pipeline {
     agent any
     stages {
