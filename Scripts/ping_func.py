@@ -10,7 +10,7 @@ import time
 import json
 import socket
 
-def ping_server(event, context): # to test code outside of aws lambda remove both arguments(event, context)
+def ping_server(): # to test code outside of aws lambda remove both arguments(event, context)
     
     cnt = 1
     host = 'www.google.com'
@@ -22,12 +22,17 @@ def ping_server(event, context): # to test code outside of aws lambda remove bot
         while initial_min < duration:
             
             ip = socket.gethostbyname(host)
-            ping(ip, count=1)
-            print("www.google.com is Online!")
-            print(f"{cnt} Waiting for 10 secs...")
-            time.sleep(10) # sleeps for 10 secs
-            initial_min += 10
-            cnt += 1
+            result = ping(ip, count=1)
+
+            if result.success():
+                print("www.google.com is Online!")
+                print(f"{cnt} Waiting for 10 secs...")
+                time.sleep(10) # sleeps for 10 secs
+                initial_min += 10
+                cnt += 1
+            else:
+                print("Host is not reachable")
+                break
 
     except socket.error:
         print(host, 'Offline')
@@ -42,3 +47,4 @@ def ping_server(event, context): # to test code outside of aws lambda remove bot
         
 
 
+ping_server()
