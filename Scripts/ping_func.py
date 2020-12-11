@@ -16,7 +16,7 @@ def ping_server(event, context): # to test code outside of aws lambda remove bot
     host = 'www.google.com'
 
     initial_min = 0 # in seconds
-    duration = 300 #(5 * 60 ) in seconds
+    duration = 5 * 60 #(300) in seconds
 
     try:
         while initial_min < duration:
