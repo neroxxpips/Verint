@@ -6,6 +6,9 @@
     posgres_instance: db.t2.micro
     bucket_name: oghenerobuck
 
+# Its is best pratice to graant the ec2 instance that will run this playbook
+# the neccessary IAM role needed. I have done so in this case
+
   tasks:
   - name: Deleting s3 bucket
     aws_s3:
