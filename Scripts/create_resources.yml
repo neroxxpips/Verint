@@ -5,17 +5,16 @@
     aws_region: us-east-1
     posgres_instance: db.t2.micro
     bucket_name: oghenerobuck
+    pkgs:
+    - boto
+    - boto3
+    - awscli
 
 
   tasks:
-  - name: installing aws-cli
+  - name: Installing neccessary packages
     pip:
-      name: awscli
-      state: latest
-
-  - name: installing boto and boto3
-    pip:
-      name: boto
+      name: "{{ pkgs }}"
       state: latest
 
   - name: Create an empty bucket
