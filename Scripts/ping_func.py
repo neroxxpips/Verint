@@ -10,7 +10,7 @@ import time
 import json
 import socket
 
-def ping_server(): # to test code outside of aws lambda remove both arguments(event, context)
+def ping_server(event, context): # to test code outside of aws lambda remove both arguments(event, context)
     
     cnt = 1
     host = 'www.google.com'
