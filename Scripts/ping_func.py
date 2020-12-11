@@ -24,12 +24,14 @@ def ping_server(event, context): # to test code outside of aws lambda remove bot
             ip = socket.gethostbyname(host)
             result = ping(ip, count=1)
 
+            # Checks if ping is successful and wait for 10 seconds and ping again
             if result.success():
                 print("www.google.com is Online!")
                 print(f"{cnt} Waiting for 10 secs...")
                 time.sleep(10) # sleeps for 10 secs
                 initial_min += 10
                 cnt += 1
+            # if host is wrong, it prints out host not reachable
             else:
                 print("Host is not reachable")
                 break
