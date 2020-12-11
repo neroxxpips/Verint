@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # AUTHOR: Oghenero Ekwevugbe
-# PURPOSE: This script turns the last line of jenkins logs in docker container and send out to output.log in current directory
+# PURPOSE: This script captures the last line of jenkins logs in docker container and sends the output to output.log in home directory
 # FURTHER INSTRUSTION: Schedule script to run as a cronjob (crontab -e => * * * * * /home/<username>/script/jenkins_logs.sh)
 # DATE MODIFIED: 12/10/2020
 
