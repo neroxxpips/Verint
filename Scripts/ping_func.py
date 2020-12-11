@@ -2,6 +2,7 @@
 
 '''
 This function ping google.com for every 10 secs for 5 minutes continuously.
+- Must use pip3 to install pythonping module
 
 '''
 from pythonping import ping
@@ -14,8 +15,8 @@ def ping_server(event, context): # to test code outside of aws lambda remove bot
     cnt = 1
     host = 'www.google.com'
 
-    initial_min = 0
-    duration = 300 #(5 * 60 )
+    initial_min = 0 # in seconds
+    duration = 300 #(5 * 60 ) in seconds
 
     try:
         while initial_min < duration:
