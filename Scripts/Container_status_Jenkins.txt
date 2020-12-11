@@ -1,0 +1,7 @@
+CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS              PORTS                                              NAMES
+532a135a747b        jenkins:latest       "/bin/tini -- /usr/l…"   3 hours ago         Up 3 hours          0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   loving_perlman
+53ebd3439dbb        ansible/awx:15.0.1   "/usr/bin/tini -- /u…"   16 hours ago        Up 3 hours          8052/tcp                                           awx_task
+e14292edb58f        ansible/awx:15.0.1   "/usr/bin/tini -- /b…"   16 hours ago        Up 3 hours          0.0.0.0:80->8052/tcp                               awx_web
+86ce24f9d8a1        redis                "docker-entrypoint.s…"   16 hours ago        Up 3 hours          6379/tcp                                           awx_redis
+1be90e9ed7ab        postgres:10          "docker-entrypoint.s…"   16 hours ago        Up 3 hours          5432/tcp                                           awx_postgres
+You have new mail in /var/spool/mail/ec2-user

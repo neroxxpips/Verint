@@ -1,0 +1,11 @@
+/* groovylint-disable-next-line CompileStatic */
+pipeline {
+    agent any
+    stages {
+        stage('Print Hello Verint!') {
+            steps {
+                    sh 'echo "Hello Verint!"'
+            }
+        }
+    }
+}
