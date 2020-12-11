@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  become: true
+  vars:
+    aws_region: us-east-1
+    posgres_instance: db.t2.micro
+    bucket_name: oghenerobuck
+
+  tasks:
+  - name: Deleting s3 bucket
+    aws_s3:
+      bucket: "{{ bucket_name }}"
+      mode: delete
+
+  - name: Deleting rds postgresql database instance
+    rds:  
+      command: delete
+      instance_name: oghenero-database
+      region: "{{ aws_region }}"
+
+  - name: Delete dynamo table
+    dynamodb_table:
+      name: Music
+      region: "{{ aws_region }}"
+      state: absent
